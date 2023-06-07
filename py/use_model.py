@@ -33,7 +33,7 @@ vect = CountVectorizer(
 )
 vect.vocabulary_ = vocabulary
 
-def predict(x):
+def predict(x: list):
     x_final = vect.transform(x)
     prediction = nb.predict(x_final)
     return prediction
