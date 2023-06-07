@@ -1,5 +1,4 @@
 from flask import Flask
-from flask.json import jsonify
 from use_model import predict
 
 app = Flask(__name__)
