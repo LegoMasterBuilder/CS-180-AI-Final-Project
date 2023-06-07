@@ -33,11 +33,14 @@ vect = CountVectorizer(
 )
 vect.vocabulary_ = vocabulary
 
+def predict(x):
+    x_final = vect.transform(x)
+    prediction = nb.predict(x_final)
+    return prediction
+
 if __name__ == "__main__":
     import sys
 
     # x = [sys.argv[1:]]
     x = sys.argv[1:]
-    x_final = vect.transform(x)
-    prediction = nb.predict(x_final)
-    print(prediction)
+    print(predict(x))
