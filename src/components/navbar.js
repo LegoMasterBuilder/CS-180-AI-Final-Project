@@ -27,7 +27,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#D9D9D9",  borderBottom: '8px solid #FF4500', justifyContent: 'center' }} style={{ boxShadow: "none" }}>
+    <AppBar position="static" sx={{ bgcolor: "#D9D9D9",  borderBottom: '8px solid #FF4500', alignItems: 'center'}} style={{ boxShadow: "none" }}>
       <Container maxWidth="sm" sx={{ alignItems: 'center' }}>
         <Toolbar disableGutters>
           <Box component='img' src={logo} sx={{ mr: 1, width: 50, height: 50 }} />
