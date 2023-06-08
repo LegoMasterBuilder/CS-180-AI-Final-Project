@@ -26,4 +26,5 @@ yarn-error.log*
 venv/
 .ipynb_checkpoints/
 *.csv
+*.pkl
 __pycache__/
