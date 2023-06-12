@@ -11,8 +11,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
 import logo from '../RAIngerlogo.png';
+import Link from '@mui/material/Link';
 
-const pages = ['About', 'GitHub'];
+// <Box component='img' src={logo} sx={{ mr: 1, width: 50, height: 50 }} />
+const pages = [
+  // { text: 'About', href: '/about' },
+  // { text: 'GitHub', href: 'https://github.com/LegoMasterBuilder/CS-180-AI-Final-Project' }
+'About', 'GitHub'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -27,10 +32,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#D9D9D9",  borderBottom: '8px solid #FF4500', justifyContent: 'center' }} style={{ boxShadow: "none" }}>
+    <AppBar position="static" sx={{ bgcolor: "#D9D9D9",  borderBottom: '8px solid #FF4500', alignItems: 'center'}} style={{ boxShadow: "none" }}>
       <Container maxWidth="sm" sx={{ alignItems: 'center' }}>
         <Toolbar disableGutters>
-          <Box component='img' src={logo} sx={{ mr: 1, width: 50, height: 50 }} />
+          
           <Typography
             variant="h6"
             noWrap
@@ -80,7 +85,8 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  {/* <Typography >{page.text}</Typography> */}
+                  <Link href={page.href}>{page.text}</Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -117,35 +123,72 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          {/* <Box sx={{ flexGrow: 0 }}> */}
-            {/* <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip> */}
-            {/* <Menu
-              sx={{ mt: '45px' }}
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
               id="menu-appbar"
-              anchorEl={anchorElUser}
+              anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: 'bottom',
+                horizontal: 'left',
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'right',
+                horizontal: 'left',
               }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
-            </Menu> */}
-          {/* </Box> */}
+            </Menu>
+          </Box> */}
+          <Box component='img' src={logo} sx={{ mr: 1, width: 50, height: 50 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            reddit rAInge
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
