@@ -1,9 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from use_model import predict
 from flask import jsonify 
 import sys
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder = 'template')
 
 # @app.route("/api/<string:title>/", methods=["GET"])
 # def predict_title(title):
@@ -19,9 +19,9 @@ def predict_title():
         if title:
             result = str(predict([title])[0])
             if result == '0':
-                return "SFW"
+                return render_template('sfw.html')
             elif result == '1':
-                return "NSFW"
+                return render_template('nsfw.html')
             
         return "No Reddit Title information is given."
 

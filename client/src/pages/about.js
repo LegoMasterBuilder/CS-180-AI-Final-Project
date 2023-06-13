@@ -12,6 +12,7 @@ function About() {
         <Box height="100vh" display="flex" flexDirection="column">
           <NavBar />
           {/* <CenterCard /> */}
+          <p>Hello</p>
           <Footer/>
         </Box>
     </div>

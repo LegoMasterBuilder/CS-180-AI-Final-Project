@@ -1,14 +1,18 @@
-import React, { ChangeEvent, Component, useState } from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import React, { useState, useEffect } from 'react';
+// import Button from '@mui/material/Button';
+// import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Grid, Typography } from '@mui/material';
+// import { useNavigate } from 'react-router-dom';
 
-function CenterCard() {
-    const [title, setTitle] = useState("");
+// import APIService from './APIService';
 
+import UserInput from './userInput';
+
+
+function CenterCard(props) {
     return (
         <Grid
         container
@@ -29,21 +33,26 @@ function CenterCard() {
                                 Enter the title below to check its safety.
                             </Typography>
 
-                            <TextField 
+                            <UserInput />
+
+                            {/* <TextField 
                                 id="outlined-basic" 
                                 label="Enter title here" 
                                 variant="outlined" 
-                                onChange={(e) => {
-                                    setTitle(e.target.value);
-                                }}
-                                value={title}
+                                // onChange={(e) => {
+                                //     setTitle(e.target.value);
+                                // }}
+                                // value={title}
                             />
 
-                            {/* <p>Your input: {name}</p> */}
-
-                            <Button variant="contained" sx={{ bgcolor: "#FF4500", ':hover': {bgcolor: '#CD3700'} }} style={{ borderRadius: 20, textTransform: 'none' }}disableElevation>
+                            <Button 
+                                variant="contained" 
+                                sx={{ bgcolor: "#FF4500", ':hover': {bgcolor: '#CD3700'} }} 
+                                style={{ borderRadius: 20, textTransform: 'none' }}
+                                disableElevation
+                            >
                                 Check Safety
-                            </Button>
+                            </Button> */}
                         </Stack>
                     </CardContent>
                 </Card>
