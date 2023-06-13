@@ -1,21 +1,27 @@
-import { Box } from '@mui/material';
+// import { Box } from '@mui/material';
 import React from 'react'
 
 // components
 import NavBar from '../components/navbar';
-import CenterCard from '../components/centerCard';
 import Footer from '../components/footer';
+
+import Jian from '../components/Jian';
+import Hans from '../components/Hans';
+import Lara from '../components/Lara';
+import Ceej from '../components/Ceej';
 
 function About() {
     return ( 
-    <div>
-        <Box height="100vh" display="flex" flexDirection="column">
-          <NavBar />
-          {/* <CenterCard /> */}
-          <p>Hello</p>
-          <Footer/>
-        </Box>
-    </div>
+      <div>
+        <NavBar />
+
+        <Jian />
+        <Hans />
+        <Lara />
+        <Ceej />
+
+        <Footer />
+      </div>
     );
 }
 

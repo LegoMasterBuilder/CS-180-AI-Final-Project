@@ -1,141 +1,22 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-
-import logo from '../RAIngerlogo.png';
-import Link from '@mui/material/Link';
-
-// <Box component='img' src={logo} sx={{ mr: 1, width: 50, height: 50 }} />
-const pages = [
-  // { text: 'About', href: '/about' },
-  // { text: 'GitHub', href: 'https://github.com/LegoMasterBuilder/CS-180-AI-Final-Project' }
-'About', 'GitHub'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import Image from 'react-bootstrap/esm/Image';
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
   return (
-    <AppBar position="static" sx={{ bgcolor: "#D9D9D9",  borderBottom: '8px solid #FF4500', alignItems: 'center'}} style={{ boxShadow: "none" }}>
-      <Container maxWidth="sm" sx={{ alignItems: 'center' }}>
-        <Toolbar disableGutters>
-          
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: '#000000',
-              textDecoration: 'none',
-            }}
-          >
-            Reddit rAInger
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {/* <Typography >{page.text}</Typography> */}
-                  <Link href={page.href}>{page.text}</Link>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box component='img' src={logo} sx={{ mr: 1, width: 50, height: 50 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            reddit rAInge
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-5" style={{ borderColor: '#FF4500' }}>
+        <a href="http://localhost:3000/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <Image width="50" style={{ marginRight: 20 }} src="RAIngerlogo.png" />
+            <span class="ml-2 fs-4">reddit r<b>AI</b>nger</span>
+        </a>
+    
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="http://localhost:3000/" class="nav-link" aria-current="page" style={{ color: 'black' }}>Home</a></li>
+            <li class="nav-item"><a href="http://localhost:3000/about" class="nav-link" style={{ color: 'black' }}>About</a></li>
+            <li class="nav-item"><a href="https://github.com/LegoMasterBuilder/CS-180-AI-Final-Project.git" class="nav-link" style={{ color: 'black' }}>GitHub</a></li>
+        </ul>
+      </header>
+    </div>
   );
 }
 export default ResponsiveAppBar;

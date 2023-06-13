@@ -1,50 +1,15 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 
-function Copyright() {
+export default function Footer() {
   return (
-    <Typography variant="body2" color="text.secondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://github.com/LegoMasterBuilder/CS-180-AI-Final-Project">
-        Link to GitHub Repository
-      </Link>{' '}
-      {new Date().getFullYear()}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
-
-export default function StickyFooter() {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-        {/* <CssBaseline /> */}
-        <Box
-          component="footer"
-          sx={{
-            py: 3,
-            px: 2,
-            mt: 'auto',
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[200]
-                : theme.palette.grey[800],
-            textAlign: 'center'
-          }}
-        >
-          <Container maxWidth="sm">
-            <Typography variant="body1">
-              Reddit rAInger
-            </Typography>
-            <Copyright />
-          </Container>
-      </Box>
-    </ThemeProvider>
+    <div class="container footer pt-3">
+      <div class="py-3 my-4">
+        <div class="nav justify-content-center border-bottom pb-1 mb-3">
+          <div><p>reddit r<b>AI</b>nger</p></div>
+        </div>
+        <div><p class="text-center text-muted">Classifying Reddit Titles using Naive Bayesian Classifier</p></div>
+        <p class="text-center text-muted">Copyright © 2023</p>
+      </div>
+    </div>
   );
 }
