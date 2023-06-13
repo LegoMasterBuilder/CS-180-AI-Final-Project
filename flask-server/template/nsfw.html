@@ -1,12 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-</head>
-<body>
-    <p>NSFW ITO</p>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>reddit rAInger</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-5" >
+            <a href="http://localhost:3000/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <img src="RAIngerlogo.png" width="50" class='mx-2'/>
+                <span class="fs-4">reddit r<b>AI</b>nger</span>
+            </a>
+        
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="http://localhost:3000/" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="https://github.com/LegoMasterBuilder/CS-180-AI-Final-Project.git" class="nav-link">GitHub</a></li>
+            </ul>
+            </header>
+        </div>
+
+        <div class="small-4 medium-4 large-4 columns text-center p-5 mx-5" style="background: #FF4500;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16" style="max-width: 300">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        
+            <h1 class="p-3">NSFW!</h1>
+            <div class="m-4">
+                <p>This reddit link has been tagged as NSFW. Please proceed with caution.</p>
+            </div>
+
+            <div class="d-grid col-3 mx-auto" style="max-width: 200 !important">
+                <a href="http://localhost:3000/"><button class="btn btn-primary rounded-pill p-3" style="background-color: white !important; color: black; border: none" href="http://localhost:3000/">Check another</button></a>
+            </div>
+        </div>
+
+        <div class="container footer fixed-bottom" style='z-index: -9999'>
+            <div class="py-3 my-4">
+              <div class="nav justify-content-center border-bottom pb-1 mb-3">
+                <p>reddit r<b>AI</b>nger</p>
+              </div>
+              <p class="text-center text-muted">Copyright © 2023</p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
 </html>

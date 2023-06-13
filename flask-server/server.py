@@ -23,7 +23,7 @@ def predict_title():
             elif result == '1':
                 return render_template('nsfw.html')
             
-        return "No Reddit Title information is given."
+        return render_template('error.html')
 
 if __name__ == "__main__":
     app.run()
